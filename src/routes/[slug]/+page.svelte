@@ -69,7 +69,7 @@
 				</div>
 				<div class="stat-title">Total Hours</div>
 				<div class="stat-value">
-					{data.timereport.reduce((acc, val) => acc + val.duration / 60, 0).toFixed(2)}
+					{data.timereport.reduce((acc, val) => acc + val.duration / 60, 0).toFixed(1)}
 				</div>
 				<div class="stat-desc">
 					{shortDate(data.timereport[data.timereport.length - 1].date)} -
@@ -124,7 +124,7 @@
 					{getFlexDiff(data.timereport[0].duration)} ({(
 						(getFlex() - getFlexDiff(data.timereport[0].duration)) /
 						getFlex()
-					).toFixed(2)}%)
+					).toFixed(1)}%)
 				</div>
 			</div>
 		</div>
@@ -163,7 +163,7 @@
 								{('' + (timeEntry.end || {}).minutes).padStart(2, '0')}
 							</td>
 							<td>{timeEntry.break}</td>
-							<td>{(timeEntry.duration / 60).toFixed(2)}</td>
+							<td>{(timeEntry.duration / 60).toFixed(1)}</td>
 							<td>
 								{#if getFlexDiff(timeEntry.duration) > 0}
 									<span class="text-success">↗︎</span>
